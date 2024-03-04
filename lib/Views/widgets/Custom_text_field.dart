@@ -4,21 +4,27 @@ import 'package:note_app/Consts.dart';
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
   CustomTextField({
-    Key? key,
+    super.key,
     required this.name,
-    required this.onchanged,
-     this.maxlines = 1
-  }) : super(key: key);
+    this.maxlines = 1,
+    this.onSave,
+  });
   String? name;
-  Function(String)? onchanged;
+
   final int maxlines;
+  final void Function(String?)? onSave;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSave,
+      validator: (data) {
+        if (data?.isEmpty ?? true) {
+          return 'the title is required';
+        }
+      },
       maxLines: maxlines,
       cursorColor: kprimarycolor,
-      onChanged: onchanged,
       decoration: InputDecoration(
         border: BulidBorder(),
         focusedBorder: BulidBorder(kprimarycolor),
