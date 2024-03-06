@@ -22,19 +22,20 @@ class CustomTextField extends StatelessWidget {
         if (data?.isEmpty ?? true) {
           return 'the title is required';
         }
+        return null;
       },
       maxLines: maxlines,
       cursorColor: kprimarycolor,
       decoration: InputDecoration(
-        border: BulidBorder(),
-        focusedBorder: BulidBorder(kprimarycolor),
-        enabledBorder: BulidBorder(),
+        border: bulidborder(),
+        focusedBorder: bulidborder(kprimarycolor),
+        enabledBorder: bulidborder(),
         hintText: name,
       ),
     );
   }
 
-  OutlineInputBorder BulidBorder([color]) {
+  OutlineInputBorder bulidborder([color]) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide(color: color ?? Colors.white),
