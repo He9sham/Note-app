@@ -27,7 +27,7 @@ class Noteitem extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              title:  Padding(
+              title: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(
                   notes.title,
@@ -59,7 +59,7 @@ class Noteitem extends StatelessWidget {
                 child: Text(
                   notes.date,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     color: Colors.black.withOpacity(.6),
                   ),
                 ),
