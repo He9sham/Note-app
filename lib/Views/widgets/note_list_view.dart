@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/Cubits/notes_cubit/notes_cubit.dart';
 import 'package:note_app/Models/note_model.dart';
+import 'package:note_app/Views/widgets/initial_view.dart';
 import 'package:note_app/Views/widgets/note_item.dart';
 
 class NoteListView extends StatelessWidget {
@@ -29,38 +30,10 @@ class NoteListView extends StatelessWidget {
                       );
                     }),
               )
-            : SizedBox(
-                height: 250,
-                width: 250,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 20,
-                          ),
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Image.asset(
-                        'assets/photos/msg1683023380-39546.jpg',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      'There are no Note yet 😢, click + to add ☺️',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    )
-                  ],
-                ),
-              );
+            : const Initialview();
       },
     );
   }
 }
+
+ 
