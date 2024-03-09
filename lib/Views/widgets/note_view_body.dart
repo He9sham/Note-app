@@ -33,7 +33,8 @@ class _NoteViewBodyState extends State<NoteViewBody> {
           ),
           Expanded(
             child: NoteListView(),
-          )
+          ),
+          
         ],
       ),
     );
