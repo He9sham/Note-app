@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/Cubits/Add_Note_cubit/add_note_cubit.dart';
 
 class CustomColor extends StatelessWidget {
   const CustomColor({super.key, required this.isActive, required this.color});
@@ -35,7 +37,7 @@ class _CustomlistColorState extends State<CustomlistColor> {
     Color(0xffEF7674),
     Color(0xffA7C4B5),
     Color(0xff9381FF),
-    Color(0xff6D435A),
+    Color.fromARGB(255, 109, 60, 87),
     Color(0xff2E3532),
   ];
   @override
@@ -51,6 +53,7 @@ class _CustomlistColorState extends State<CustomlistColor> {
               child: GestureDetector(
                 onTap: () {
                   currntindex = index;
+                  BlocProvider.of<AddNoteCubit>(context).color = colors[index];
                   setState(() {});
                 },
                 child: CustomColor(

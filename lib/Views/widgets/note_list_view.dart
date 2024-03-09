@@ -5,7 +5,10 @@ import 'package:note_app/Models/note_model.dart';
 import 'package:note_app/Views/widgets/note_item.dart';
 
 class NoteListView extends StatelessWidget {
-  const NoteListView({super.key});
+  const NoteListView({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
